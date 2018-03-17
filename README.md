@@ -10,8 +10,8 @@ Its simple logging redirect (to SLF4J) library for [RLib](https://github.com/Jav
 ```xml
 <repositories>
 	<repository>
-		<id>rlib-repository</id>
-		<url>https://dl.bintray.com/javasabr/maven</url>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
 	</repository>
 </repositories>
 
@@ -28,7 +28,7 @@ Its simple logging redirect (to SLF4J) library for [RLib](https://github.com/Jav
 ```groovy
 repositories {
 	maven {
-		url  "https://dl.bintray.com/javasabr/maven" 
+		url 'https://jitpack.io' 
 	}
 }
 
