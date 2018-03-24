@@ -4,7 +4,7 @@
 
 	<groupId>com.github.JavaSaBr</groupId>
 	<artifactId>rlib.slf4j</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>rlib.slf4j</name>
@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>com.spaceshift</groupId>
 			<artifactId>rlib</artifactId>
-			<version>6.8.2</version>
+			<version>6.8.3-Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
