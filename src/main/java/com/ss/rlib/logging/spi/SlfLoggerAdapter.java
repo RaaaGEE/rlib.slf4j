@@ -5,9 +5,9 @@ import java.util.function.Function;
 
 import org.slf4j.LoggerFactory;
 
-import com.ss.rlib.function.TripleFunction;
-import com.ss.rlib.logging.Logger;
-import com.ss.rlib.logging.LoggerLevel;
+import com.ss.rlib.common.function.TripleFunction;
+import com.ss.rlib.common.logging.Logger;
+import com.ss.rlib.common.logging.LoggerLevel;
 
 /**
  * SlfLoggerAdapter.java
@@ -24,20 +24,24 @@ public class SlfLoggerAdapter implements Logger {
     public SlfLoggerAdapter() {
     }
 
-    public String getName() {
+    @Override
+	public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    @Override
+	public void setName(String name) {
         this.name = name;
         this.log = LoggerFactory.getLogger(name);
     }
 
-    public void print(LoggerLevel level, Object owner, String message) {
+    @Override
+	public void print(LoggerLevel level, Object owner, String message) {
         print(level, message);
     }
 
-    public void print(LoggerLevel level, String message) {
+    @Override
+	public void print(LoggerLevel level, String message) {
         switch (level) {
         case DEBUG:
             log.debug(message);
@@ -57,11 +61,13 @@ public class SlfLoggerAdapter implements Logger {
         }
     }
 
-    public void print(LoggerLevel level, Object owner, Throwable exception) {
+    @Override
+	public void print(LoggerLevel level, Object owner, Throwable exception) {
         print(level, exception);
     }
 
-    public void print(LoggerLevel level, Throwable exception) {
+    @Override
+	public void print(LoggerLevel level, Throwable exception) {
         switch (level) {
         case DEBUG:
             log.debug("", exception);
@@ -81,7 +87,8 @@ public class SlfLoggerAdapter implements Logger {
         }
     }
 
-    public <T> void print(LoggerLevel level, Object owner, T arg, Function<T, String> messageFactory) {
+    @Override
+	public <T> void print(LoggerLevel level, Object owner, T arg, Function<T, String> messageFactory) {
         if(!isLevelEnabled(level)) {
             return;
         }
@@ -89,7 +96,8 @@ public class SlfLoggerAdapter implements Logger {
         print(level, messageFactory.apply(arg));
     }
 
-    public <F, S> void print(LoggerLevel level, Object owner, F first, S second, BiFunction<F, S, String> messageFactory) {
+    @Override
+	public <F, S> void print(LoggerLevel level, Object owner, F first, S second, BiFunction<F, S, String> messageFactory) {
         if(!isLevelEnabled(level)) {
             return;
         }
@@ -97,7 +105,8 @@ public class SlfLoggerAdapter implements Logger {
         print(level, messageFactory.apply(first, second));
     }
 
-    public <F, S, T> void print(LoggerLevel level, Object owner, F first, S second, T third, TripleFunction<F, S, T, String> messageFactory) {
+    @Override
+	public <F, S, T> void print(LoggerLevel level, Object owner, F first, S second, T third, TripleFunction<F, S, T, String> messageFactory) {
         if(!isLevelEnabled(level)) {
             return;
         }
@@ -105,7 +114,8 @@ public class SlfLoggerAdapter implements Logger {
         print(level, messageFactory.apply(first, second, third));
     }
 
-    public <T> void print(LoggerLevel level, T arg, Function<T, String> messageFactory) {
+    @Override
+	public <T> void print(LoggerLevel level, T arg, Function<T, String> messageFactory) {
         if(!isLevelEnabled(level)) {
             return;
         }
@@ -113,7 +123,8 @@ public class SlfLoggerAdapter implements Logger {
         print(level, messageFactory.apply(arg));
     }
 
-    public <F, S> void print(LoggerLevel level, F first, S second, BiFunction<F, S, String> messageFactory) {
+    @Override
+	public <F, S> void print(LoggerLevel level, F first, S second, BiFunction<F, S, String> messageFactory) {
         if(!isLevelEnabled(level)) {
             return;
         }
@@ -121,7 +132,8 @@ public class SlfLoggerAdapter implements Logger {
         print(level, messageFactory.apply(first, second));
     }
 
-    public <F, S, T> void print(LoggerLevel level, F first, S second, T third, TripleFunction<F, S, T, String> messageFactory) {
+    @Override
+	public <F, S, T> void print(LoggerLevel level, F first, S second, T third, TripleFunction<F, S, T, String> messageFactory) {
         if(!isLevelEnabled(level)) {
             return;
         }

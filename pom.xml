@@ -4,13 +4,15 @@
 
 	<groupId>com.github.zcxv</groupId>
 	<artifactId>rlib.slf4j</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>jar</packaging>
 
 	<name>rlib.slf4j</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	
@@ -30,8 +32,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.spaceshift</groupId>
-			<artifactId>rlib</artifactId>
-			<version>6.9.0.Final</version>
+			<artifactId>rlib.common</artifactId>
+			<version>7.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
